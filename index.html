@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Fugas de Agua | Ciudad Limpia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💧 Registro de Fugas de Agua</h1>
+            <p>Reporta incidentes para una gestión rápida y eficiente.</p>
+        </header>
+
+        <main>
+            <section class="card form-section slide-up">
+                <h2>📝 Nuevo Reporte</h2>
+                <form id="leakForm">
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Ej. Calle Paseo de la Reforma 123" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="colonia">Colonia</label>
+                        <input type="text" id="colonia" name="colonia" placeholder="Ej. Juárez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nivelGravedad">Nivel de Gravedad</label>
+                        <select id="nivelGravedad" name="nivelGravedad" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Bajo">Bajo (Goteo leve)</option>
+                            <option value="Medio">Medio (Flujo constante)</option>
+                            <option value="Alto">Alto (Ruptura de tubería)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" rows="3" placeholder="Describe brevemente la situación..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Enviar Reporte</button>
+                </form>
+            </section>
+
+            <section class="card list-section slide-up delay-1">
+                <h2>📋 Reportes Recientes</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dirección / Colonia</th>
+                                <th>Gravedad</th>
+                                <th>Descripción</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaksTableBody">
+                            <!-- Los datos se cargarán aquí -->
+                        </tbody>
+                    </table>
+                    <div id="loader" class="loader hidden"></div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Ciudad Limpia - Sistema de Gestión de Agua</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
