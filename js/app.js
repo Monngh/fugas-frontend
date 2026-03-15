@@ -5,7 +5,7 @@
  */
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : 'https://api-fugas-backend.onrender.com/api/fugas'; // Reemplazar con la URL real al desplegar
+    : 'https://api-fugas-backend.onrender.com'; // Reemplazar con la URL real al desplegar
 
 const leakForm = document.getElementById('leakForm');
 const leaksTableBody = document.getElementById('leaksTableBody');
